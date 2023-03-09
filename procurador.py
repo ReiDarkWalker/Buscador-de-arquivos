@@ -1,5 +1,4 @@
 import os
-import threading
 
 root = 'C:\\'
 search = input('digite o nome do arquivo: ')
@@ -15,10 +14,9 @@ def whatisthefile(packet):
                 filename, extension = os.path.splitext(files)
 
                 if filename == search or files == search or search in filename:
-                    print('o caminho do arquivo é:', actual_dir)
+                    print('o caminho de arquivo encontrado:', actual_dir,'\n')
 
     except PermissionError:
         pass
 
-thread = threading.Thread(target=whatisthefile(root))
-thread.start()
+whatisthefile(root)
